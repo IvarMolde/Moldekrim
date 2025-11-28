@@ -290,8 +290,10 @@ function renderPage(pageId) {
             <div class="page-content">
                 <h2>${pageData.title}</h2>
                 ${visualHtml}
-                <p>${pageData.text}</p>
-                ${pageData.clue ? `<div class="clue-found">🔎 Du fant: ${pageData.clue.name}</div>` : ''}
+                <div class="text-scroll-area">
+                    <p>${pageData.text}</p>
+                    ${pageData.clue ? `<div class="clue-found">🔎 Du fant: ${pageData.clue.name}</div>` : ''}
+                </div>
                 <div class="choices">
                     ${choicesHtml}
                     ${nextHtml}

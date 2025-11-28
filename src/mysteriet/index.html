@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mysteriet i Molde</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- UI Controls (Inventory & Notebook) -->
+        <div class="ui-controls">
+            <div class="inventory-panel">
+                <h3>Bevis</h3>
+                <ul id="inventory-list"></ul>
+            </div>
+            <div class="inventory-panel" style="margin-left: 10px;">
+                <h3>Notatblokk</h3>
+                <ul id="notebook-list"></ul>
+            </div>
+        </div>
+
+        <!-- Timeline Button -->
+        <button id="timeline-btn" onclick="window.toggleTimeline()">🕒 Tidslinje</button>
+
+        <!-- Timeline Modal -->
+        <div id="timeline-modal" class="modal hidden">
+            <div class="modal-content">
+                <button class="close-modal" onclick="window.toggleTimeline()">&times;</button>
+                <h2>Tidslinje: Kvelden 14. november</h2>
+                <ul id="timeline-list">
+                    <!-- Timeline items injected here -->
+                </ul>
+            </div>
+        </div>
+
+        <!-- Main Game Area -->
+        <div class="book-container">
+            <div class="book" id="book">
+                <!-- Pages will be injected here by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Navigation Buttons (Hidden by default, managed by script) -->
+        <div class="navigation" style="display:none;">
+            <button id="prev-btn">← Forrige</button>
+        </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+
+</html>

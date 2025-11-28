@@ -13,20 +13,37 @@
 
 <body>
     <div class="app-container">
-        <!-- UI Controls (Inventory & Notebook) -->
-        <div class="ui-controls">
-            <div class="inventory-panel">
-                <h3>Bevis</h3>
+
+        <!-- Top Right Controls (Inventory & Notebook) -->
+        <div class="top-controls">
+            <button class="icon-btn" onclick="window.toggleInventory()">💼 Bevis</button>
+            <button class="icon-btn" onclick="window.toggleNotebook()">📝 Notater</button>
+        </div>
+
+        <!-- Timeline Button (Top Left) -->
+        <button id="timeline-btn" onclick="window.toggleTimeline()">🕒 Tidslinje</button>
+
+        <!-- Inventory Modal -->
+        <div id="inventory-modal" class="modal hidden">
+            <div class="modal-content">
+                <button class="close-modal" onclick="window.toggleInventory()">&times;</button>
+                <h2>Dine Bevis</h2>
                 <ul id="inventory-list"></ul>
-            </div>
-            <div class="inventory-panel" style="margin-left: 10px;">
-                <h3>Notatblokk</h3>
-                <ul id="notebook-list"></ul>
+                <p id="empty-inventory-msg" style="font-style: italic; color: #888; display: none;">Du har ikke funnet
+                    noen bevis ennå.</p>
             </div>
         </div>
 
-        <!-- Timeline Button -->
-        <button id="timeline-btn" onclick="window.toggleTimeline()">🕒 Tidslinje</button>
+        <!-- Notebook Modal -->
+        <div id="notebook-modal" class="modal hidden">
+            <div class="modal-content">
+                <button class="close-modal" onclick="window.toggleNotebook()">&times;</button>
+                <h2>Detektivens Notater</h2>
+                <ul id="notebook-list"></ul>
+                <p id="empty-notebook-msg" style="font-style: italic; color: #888; display: none;">Notatblokken er tom.
+                </p>
+            </div>
+        </div>
 
         <!-- Timeline Modal -->
         <div id="timeline-modal" class="modal hidden">

@@ -7,7 +7,6 @@
 
 * {
     box-sizing: border-box;
-    /* Crucial for responsive layout */
 }
 
 body {
@@ -19,7 +18,6 @@ body {
     height: 100vh;
     width: 100vw;
     overflow: hidden;
-    /* Prevent body scroll */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -36,62 +34,56 @@ body {
     position: relative;
 }
 
-/* UI Controls (Inventory & Notebook) - Fixed Position */
-.ui-controls {
-    position: absolute;
+/* Top Controls (Inventory & Notebook) */
+.top-controls {
+    position: fixed;
     top: 10px;
     right: 10px;
     display: flex;
     gap: 10px;
-    z-index: 100;
-    pointer-events: none;
-    /* Let clicks pass through container */
+    z-index: 2000;
 }
 
-.inventory-panel {
-    background: rgba(0, 0, 0, 0.8);
+.icon-btn {
+    background: #000;
     color: #fff;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #555;
-    max-width: 200px;
-    max-height: 30vh;
-    overflow-y: auto;
-    pointer-events: auto;
-    /* Re-enable clicks */
-    font-size: 0.8rem;
-}
-
-.inventory-panel h3 {
-    margin: 0 0 5px 0;
+    border: 2px solid #fff;
     font-size: 0.9rem;
-    color: #f4e4bc;
-    border-bottom: 1px solid #555;
+    padding: 8px 12px;
+    font-family: sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    width: auto;
 }
 
-.inventory-panel ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+.icon-btn:hover {
+    background: #333;
+    transform: scale(1.05);
 }
 
-.inventory-panel li {
-    margin-bottom: 4px;
-    display: flex;
-    align-items: center;
-    gap: 5px;
+/* Timeline Button */
+#timeline-btn {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 2000;
+    background: #000;
+    color: #fff;
+    border: 2px solid #fff;
+    font-size: 0.9rem;
+    padding: 8px 12px;
+    font-family: sans-serif;
+    font-weight: bold;
+    cursor: pointer;
 }
 
-/* Main Book Container - Responsive Size */
+/* Main Book Container */
 .book-container {
     width: 95vw;
-    /* Use almost full width */
     height: 90vh;
-    /* Use almost full height */
     max-width: 1000px;
-    /* Cap width on large screens */
     max-height: 800px;
-    /* Cap height */
     position: relative;
     perspective: 1500px;
 }
@@ -103,7 +95,7 @@ body {
     transform-style: preserve-3d;
 }
 
-/* Page Layout - Flexbox for "No Scroll" */
+/* Page Layout */
 .page {
     position: absolute;
     width: 100%;
@@ -112,11 +104,9 @@ body {
     box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.1), 0 5px 15px rgba(0, 0, 0, 0.3);
     border-radius: 5px;
     padding: 3vh 3vw;
-    /* Responsive padding */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* Distribute space */
     backface-visibility: hidden;
     opacity: 0;
     pointer-events: none;
@@ -143,7 +133,6 @@ body {
 .page.cover h1 {
     font-family: 'Special Elite', cursive;
     font-size: clamp(2rem, 5vw, 4rem);
-    /* Responsive font size */
     color: var(--accent-color);
     margin-bottom: 2vh;
 }
@@ -153,10 +142,9 @@ body {
     flex-direction: column;
     height: 100%;
     overflow: hidden;
-    /* Prevent internal scroll if possible */
 }
 
-/* Responsive Typography */
+/* Typography */
 h2 {
     font-family: 'Special Elite', cursive;
     color: var(--accent-color);
@@ -172,20 +160,16 @@ p {
     line-height: 1.4;
     margin-bottom: 1.5vh;
     flex-shrink: 1;
-    /* Allow text to shrink if needed */
     overflow-y: auto;
-    /* Only scroll text if absolutely necessary */
 }
 
-/* Responsive Images */
+/* Images */
 .story-image,
 .video-wrapper {
     width: 100%;
     height: auto;
     max-height: 35vh;
-    /* Limit image height to 35% of view */
     object-fit: contain;
-    /* Ensure image fits without cropping */
     border: 3px solid white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     margin-bottom: 2vh;
@@ -205,15 +189,13 @@ p {
     animation: kenburns 20s infinite alternate;
 }
 
-/* Choices / Buttons Area */
+/* Choices */
 .choices {
     margin-top: auto;
-    /* Push to bottom */
     display: flex;
     flex-direction: column;
     gap: 1vh;
     flex-shrink: 0;
-    /* Don't shrink buttons */
     padding-top: 1vh;
 }
 
@@ -255,52 +237,7 @@ button:hover {
     font-size: 1rem;
 }
 
-/* Timeline Button */
-#timeline-btn {
-    position: fixed;
-    top: 10px;
-    left: 10px;
-    z-index: 2000;
-    background: #000;
-    color: #fff;
-    border: 2px solid #fff;
-    font-size: 0.9rem;
-    padding: 8px 12px;
-    font-family: sans-serif;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-/* Reset Button */
-#reset-btn {
-    position: fixed;
-    bottom: 10px;
-    left: 10px;
-    z-index: 2000;
-    background: rgba(255, 0, 0, 0.3);
-    padding: 5px 10px;
-    border-radius: 5px;
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 0.8rem;
-    cursor: pointer;
-    font-family: sans-serif;
-}
-
-/* Audio Controls */
-#audio-controls {
-    position: fixed;
-    bottom: 10px;
-    right: 10px;
-    z-index: 2000;
-    background: rgba(0, 0, 0, 0.5);
-    padding: 5px 10px;
-    border-radius: 5px;
-    color: white;
-    font-size: 0.8rem;
-    cursor: pointer;
-}
-
-/* Modal (Timeline) */
+/* Modals */
 .modal {
     position: fixed;
     top: 0;
@@ -331,6 +268,13 @@ button:hover {
     position: relative;
 }
 
+.modal-content h2 {
+    color: #f4e4bc;
+    border-bottom: 1px solid #555;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
 .close-modal {
     position: absolute;
     top: 10px;
@@ -338,6 +282,60 @@ button:hover {
     font-size: 2rem;
     cursor: pointer;
     color: #ff6b6b;
+    background: none;
+    border: none;
+    width: auto;
+    padding: 0;
+}
+
+/* Reset Button */
+#reset-btn {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    z-index: 2000;
+    background: rgba(255, 0, 0, 0.3);
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.8rem;
+    cursor: pointer;
+    font-family: sans-serif;
+    width: auto;
+}
+
+/* Audio Controls */
+#audio-controls {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: 2000;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: white;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+.audio-playing {
+    color: #4caf50 !important;
+    border-color: #4caf50 !important;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.4);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(76, 175, 80, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(76, 175, 80, 0);
+    }
 }
 
 /* Rain Effect */
@@ -378,26 +376,6 @@ button:hover {
     }
 }
 
-.audio-playing {
-    color: #4caf50 !important;
-    border-color: #4caf50 !important;
-    animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-    0% {
-        box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.4);
-    }
-
-    70% {
-        box-shadow: 0 0 0 10px rgba(76, 175, 80, 0);
-    }
-
-    100% {
-        box-shadow: 0 0 0 0 rgba(76, 175, 80, 0);
-    }
-}
-
 .shake {
     animation: shake 0.5s;
 }
@@ -417,4 +395,41 @@ button:hover {
     50% {
         transform: translateX(5px);
     }
+}
+
+/* Deduction Screen Styles */
+.deduction-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: #f4e4bc;
+    padding: 15px;
+    border-radius: 5px;
+    color: #000;
+    overflow-y: auto;
+    max-height: 50vh;
+}
+
+.deduction-group {
+    background: rgba(255, 255, 255, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #333;
+}
+
+.deduction-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #000;
+}
+
+.deduction-group select {
+    width: 100%;
+    padding: 8px;
+    font-size: 1rem;
+    font-family: sans-serif;
+    border: 1px solid #333;
+    background: #fff;
+    color: #000;
 }

@@ -311,6 +311,19 @@ window.toggleTimeline = () => {
     updateTimelineUI();
 };
 
+// Inventory & Notebook Functions
+window.toggleInventory = () => {
+    const modal = document.getElementById('inventory-modal');
+    modal.classList.toggle('hidden');
+    updateUI(); // Ensure list is fresh
+};
+
+window.toggleNotebook = () => {
+    const modal = document.getElementById('notebook-modal');
+    modal.classList.toggle('hidden');
+    updateUI(); // Ensure list is fresh
+};
+
 function updateTimelineUI() {
     timelineList.innerHTML = state.timeline.map(event => `
         <li>

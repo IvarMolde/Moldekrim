@@ -15,6 +15,12 @@ export const story = [
         image: "detective_office.png",
         audio: "office",
         timelineEvent: { id: "body_found", time: "22:45", description: "Liket av Tina blir funnet på kaia." },
+        learning: {
+            question: "Hva er klokken når telefonen ringer?",
+            options: ["22:00", "23:00", "Midnatt"],
+            correct: 1, // Index of correct answer
+            feedback: "Riktig! Det er sent på kvelden."
+        },
         next: "scene_choice"
     },
     {
@@ -39,6 +45,12 @@ export const story = [
         image: "crime_scene_harbor.png",
         video: true,
         audio: "harbor",
+        learning: {
+            question: "Hvor ble liket funnet?",
+            options: ["I en bil", "Bak en container", "På en båt"],
+            correct: 1,
+            feedback: "Korrekt. Hun ble funnet skjult bak en container."
+        },
         choices: [
             { text: "Ransak lommene hennes", target: "harbor_pockets" },
             { text: "Søk i området rundt liket", target: "harbor_ground" },
@@ -53,6 +65,12 @@ export const story = [
         audio: "harbor",
         clue: { id: "ticket", name: "Fergebillett", description: "Bevis på at hun ankom 19:45." },
         timelineEvent: { id: "ferry_arrival", time: "19:45", description: "Tina ankommer Molde med ferge." },
+        learning: {
+            question: "Hvor kom Tina fra?",
+            options: ["Ålesund", "Vestnes", "Kristiansund"],
+            correct: 1,
+            feedback: "Riktig. Billetten var fra Vestnes."
+        },
         next: "scene_harbor"
     },
     {
@@ -62,6 +80,12 @@ export const story = [
         image: "crime_scene_harbor.png",
         audio: "harbor",
         clue: { id: "button", name: "Messingknapp", description: "Revet av morderens jakke." },
+        learning: {
+            question: "Hva slags materiale er knappen laget av?",
+            options: ["Gull", "Sølv", "Messing"],
+            correct: 2,
+            feedback: "Stemmer. Det er en messingknapp."
+        },
         next: "scene_harbor"
     },
 
@@ -72,6 +96,12 @@ export const story = [
         text: "Døren er ulåst. Inne lukter det innestengt og billig parfyme. Leiligheten er endevendt. Skuffer er dratt ut, klær ligger strødd. Noen lette etter noe, eller så var de bare rasende.",
         image: "tina_apartment.png",
         audio: "rain",
+        learning: {
+            question: "Hvordan ser leiligheten ut?",
+            options: ["Ryddig og ren", "Endevendt og rotete", "Tom"],
+            correct: 1,
+            feedback: "Ja, noen har romstert voldsomt her."
+        },
         choices: [
             { text: "Undersøk soverommet", target: "apt_bedroom" },
             { text: "Sjekk kjøkkenbordet", target: "apt_kitchen" },
@@ -98,6 +128,12 @@ export const story = [
         audio: "rain",
         clue: { id: "diary", name: "Dagbok", description: "Beskriver trusler fra Lars." },
         note: "Motiv: Lars truet henne. 'Ingen andre skal få deg'.",
+        learning: {
+            question: "Hvem er Tina redd for?",
+            options: ["Frank", "Lars", "Olav"],
+            correct: 1,
+            feedback: "Riktig. Hun skriver om Lars i dagboken."
+        },
         next: "scene_apartment"
     },
     {
@@ -116,6 +152,12 @@ export const story = [
         text: "Meldingen er fra 'Lars' og kom klokken 20:10: 'Jeg vet du kommer med 19:45-ferga. Jeg står på kaia og venter. Vi er ikke ferdige.' Det går kaldt nedover ryggen din. Han visste nøyaktig hvor hun var.",
         image: "tina_apartment.png",
         audio: "rain",
+        learning: {
+            question: "Hva visste Lars?",
+            options: ["Hvor hun bodde", "Hvilken ferge hun tok", "Hvor hun jobbet"],
+            correct: 1,
+            feedback: "Korrekt. Han visste om 19:45-fergen."
+        },
         next: "scene_apartment"
     },
 
@@ -139,6 +181,12 @@ export const story = [
         text: "Berit skjelver på hendene når hun tenner en sigarett. 'Jeg? Jeg har ikke sett Tina i dag. Jeg jobbet til stengetid, klokken 21:00. Du kan sjekke timelisten.'",
         image: "restaurant_interior.png",
         audio: "cafe",
+        learning: {
+            question: "Hva gjør Berit mens hun snakker?",
+            options: ["Ler", "Gråter", "Skjelver på hendene"],
+            correct: 2,
+            feedback: "Riktig. Hun er nervøs og skjelver."
+        },
         choices: [
             { text: "Sjekk timelisten på veggen", target: "cafe_log_check" },
             { text: "La det ligge", target: "scene_cafe" }
@@ -173,6 +221,12 @@ export const story = [
         image: "restaurant_interior.png",
         audio: "cafe",
         note: "Vitne: Mann med militærjakke og messingknapper lette etter Tina.",
+        learning: {
+            question: "Hvordan beskriver Olav mannen?",
+            options: ["Velkledd og rolig", "Ustabil med militærjakke", "Liten og redd"],
+            correct: 1,
+            feedback: "Stemmer. Beskrivelsen passer på Lars."
+        },
         next: "scene_cafe"
     },
 
@@ -216,6 +270,12 @@ export const story = [
         image: "cover_molde.png",
         audio: "rain",
         note: "Bevis: Lars mangler en knapp som matcher den på åstedet.",
+        learning: {
+            question: "Hva mangler på jakken til Lars?",
+            options: ["En hette", "En glidelås", "En knapp"],
+            correct: 2,
+            feedback: "Riktig! En fellende bevis."
+        },
         next: "lars_interrogation"
     },
     {

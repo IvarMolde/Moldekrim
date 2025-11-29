@@ -18,10 +18,28 @@
         <div class="top-controls">
             <button class="icon-btn" onclick="window.toggleInventory()">💼 Bevis</button>
             <button class="icon-btn" onclick="window.toggleNotebook()">📝 Notater</button>
+            <button class="icon-btn mobile-only" onclick="window.toggleLearning()">🎓 Oppgaver</button>
         </div>
 
         <!-- Timeline Button (Top Left) -->
         <button id="timeline-btn" onclick="window.toggleTimeline()">🕒 Tidslinje</button>
+
+        <!-- Learning Sidebar (Desktop: Left, Mobile: Hidden/Modal) -->
+        <aside id="learning-sidebar" class="hidden-mobile">
+            <div class="learning-content">
+                <h3>🎓 Språkoppgaver</h3>
+                <div id="learning-task-container">
+                    <p>Ingen oppgaver for denne scenen.</p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Game Area -->
+        <div class="book-container">
+            <div class="book" id="book">
+                <!-- Pages will be injected here by JavaScript -->
+            </div>
+        </div>
 
         <!-- Inventory Modal -->
         <div id="inventory-modal" class="modal hidden">
@@ -53,13 +71,6 @@
                 <ul id="timeline-list">
                     <!-- Timeline items injected here -->
                 </ul>
-            </div>
-        </div>
-
-        <!-- Main Game Area -->
-        <div class="book-container">
-            <div class="book" id="book">
-                <!-- Pages will be injected here by JavaScript -->
             </div>
         </div>
 

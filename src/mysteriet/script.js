@@ -189,6 +189,7 @@ function renderPage(pageId) {
     }
 
     saveGame();
+    renderLearningTask(pageData);
 
     // Render HTML
     bookElement.innerHTML = '';
@@ -306,6 +307,52 @@ function renderPage(pageId) {
     bookElement.appendChild(pageEl);
     updateUI();
 }
+
+// Learning Task Functions
+function renderLearningTask(pageData) {
+    const container = document.getElementById('learning-task-container');
+    if (!pageData.learning) {
+        container.innerHTML = '<p style="font-style: italic; color: #888;">Ingen språkoppgaver for denne scenen.</p>';
+        return;
+    }
+
+    const task = pageData.learning;
+    container.innerHTML = `
+        <div class="learning-card">
+            <p class="question"><strong>${task.question}</strong></p>
+            <div class="options">
+                ${task.options.map((opt, idx) => `
+                    <button class="learning-option" onclick="window.checkLearningAnswer(${idx}, ${task.correct})">
+                        ${opt}
+                    </button>
+                `).join('')}
+            </div>
+            <p id="learning-feedback" class="feedback"></p>
+        </div>
+    `;
+}
+
+window.checkLearningAnswer = (selectedIdx, correctIdx) => {
+    const feedback = document.getElementById('learning-feedback');
+    const buttons = document.querySelectorAll('.learning-option');
+
+    if (selectedIdx === correctIdx) {
+        feedback.style.color = 'lightgreen';
+        feedback.innerText = "Riktig! Godt jobbet. ✅";
+        buttons[selectedIdx].style.background = '#2e7d32';
+        buttons.forEach(btn => btn.disabled = true);
+    } else {
+        feedback.style.color = '#ff6b6b';
+        feedback.innerText = "Prøv igjen. ❌";
+        buttons[selectedIdx].classList.add('shake');
+        setTimeout(() => buttons[selectedIdx].classList.remove('shake'), 500);
+    }
+};
+
+window.toggleLearning = () => {
+    const sidebar = document.getElementById('learning-sidebar');
+    sidebar.classList.toggle('active-mobile');
+};
 
 // Timeline Functions
 window.toggleTimeline = () => {

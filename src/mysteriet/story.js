@@ -6,6 +6,12 @@ export const story = [
         text: "Regnet vasker aldri denne byen ren. En kvinne er død. En morder går fri. Har du magen til å grave i sannheten?",
         image: "cover_molde.png",
         audio: "rain",
+        learning: {
+            question: "Hva betyr ordet 'mysterium'?",
+            options: ["En fest", "En gåte", "En by"],
+            correct: 1,
+            feedback: "Riktig! Et mysterium er noe uforklarlig eller en gåte."
+        },
         next: "intro"
     },
     {

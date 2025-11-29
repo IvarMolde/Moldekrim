@@ -447,6 +447,19 @@ button:hover {
     }
 }
 
+/* Close Sidebar Button (Mobile) */
+.close-sidebar {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: #ff6b6b;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 2600;
+}
+
 /* MOBILE RESPONSIVENESS */
 @media (max-width: 768px) {
     .app-container {
@@ -458,13 +471,19 @@ button:hover {
         left: 0;
         bottom: 0;
         width: 100%;
-        height: 60vh;
+        height: 70vh;
+        /* Increased height */
         border-right: none;
-        border-top: 2px solid #444;
+        border-top: 2px solid #f4e4bc;
+        background: #1a1a1a;
+        /* Ensure opaque background */
         transform: translateY(100%);
         /* Hidden by default */
         transition: transform 0.3s ease-in-out;
         margin-right: 0;
+        z-index: 2500;
+        /* Higher than everything else */
+        box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.8);
     }
 
     #learning-sidebar.active-mobile {

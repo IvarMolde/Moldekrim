@@ -24,7 +24,14 @@
         <!-- Timeline Button (Top Left) -->
         <button id="timeline-btn" onclick="window.toggleTimeline()">🕒 Tidslinje</button>
 
-        <!-- Learning Sidebar (Desktop: Left, Mobile: Hidden/Modal) -->
+        <!-- Main Game Area -->
+        <div class="book-container">
+            <div class="book" id="book">
+                <!-- Pages will be injected here by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Learning Sidebar (Desktop: Right, Mobile: Hidden/Modal) -->
         <aside id="learning-sidebar" class="hidden-mobile">
             <button class="close-sidebar mobile-only" onclick="window.toggleLearning()">×</button>
             <div class="learning-content">
@@ -34,13 +41,6 @@
                 </div>
             </div>
         </aside>
-
-        <!-- Main Game Area -->
-        <div class="book-container">
-            <div class="book" id="book">
-                <!-- Pages will be injected here by JavaScript -->
-            </div>
-        </div>
 
         <!-- Inventory Modal -->
         <div id="inventory-modal" class="modal hidden">

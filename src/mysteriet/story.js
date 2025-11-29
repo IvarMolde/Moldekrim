@@ -22,10 +22,10 @@ export const story = [
         audio: "office",
         timelineEvent: { id: "body_found", time: "22:45", description: "Liket av Tina blir funnet på kaia." },
         learning: {
-            question: "Hva er klokken når telefonen ringer?",
-            options: ["22:00", "23:00", "Midnatt"],
-            correct: 1, // Index of correct answer
-            feedback: "Riktig! Det er sent på kvelden."
+            question: "Hva betyr uttrykket 'å hamre' i denne teksten?",
+            options: ["At noen slår med en hammer", "At man har veldig vondt i hodet", "At det bråker ute"],
+            correct: 1,
+            feedback: "Riktig! Det er en metafor for hodepine."
         },
         next: "scene_choice"
     },
@@ -35,6 +35,12 @@ export const story = [
         text: "Du står på gaten. Luften smaker salt og eksos. Hvor begynner du? Morderen har allerede et forsprang.",
         image: "cover_molde.png",
         audio: "rain",
+        learning: {
+            question: "Hvilken ordklasse tilhører ordene 'salt' og 'eksos'?",
+            options: ["Verb", "Substantiv", "Adjektiv"],
+            correct: 1,
+            feedback: "Korrekt. Det er navn på ting/stoffer."
+        },
         choices: [
             { text: "Dra til åstedet (Kaia)", target: "scene_harbor" },
             { text: "Oppsøk Tinas leilighet", target: "scene_apartment" },
@@ -52,10 +58,10 @@ export const story = [
         video: true,
         audio: "harbor",
         learning: {
-            question: "Hvor ble liket funnet?",
-            options: ["I en bil", "Bak en container", "På en båt"],
+            question: "Hvorfor kaster blålysene skygger?",
+            options: ["Fordi det er lyst ute", "Fordi det er mørkt ute", "Fordi lampene er ødelagte"],
             correct: 1,
-            feedback: "Korrekt. Hun ble funnet skjult bak en container."
+            feedback: "Riktig. Lyskilder kaster skygger når det er mørkt rundt."
         },
         choices: [
             { text: "Ransak lommene hennes", target: "harbor_pockets" },
@@ -72,10 +78,10 @@ export const story = [
         clue: { id: "ticket", name: "Fergebillett", description: "Bevis på at hun ankom 19:45." },
         timelineEvent: { id: "ferry_arrival", time: "19:45", description: "Tina ankommer Molde med ferge." },
         learning: {
-            question: "Hvor kom Tina fra?",
-            options: ["Ålesund", "Vestnes", "Kristiansund"],
-            correct: 1,
-            feedback: "Riktig. Billetten var fra Vestnes."
+            question: "Hva er det motsatte av 'gjennomvåt'?",
+            options: ["Knusktørr", "Fuktig", "Våt"],
+            correct: 0,
+            feedback: "Riktig. Knusktørr betyr helt tørr."
         },
         next: "scene_harbor"
     },
@@ -87,10 +93,10 @@ export const story = [
         audio: "harbor",
         clue: { id: "button", name: "Messingknapp", description: "Revet av morderens jakke." },
         learning: {
-            question: "Hva slags materiale er knappen laget av?",
-            options: ["Gull", "Sølv", "Messing"],
-            correct: 2,
-            feedback: "Stemmer. Det er en messingknapp."
+            question: "Hva betyr uttrykket 'med makt' her?",
+            options: ["Forsiktig", "Med stor kraft", "Med en saks"],
+            correct: 1,
+            feedback: "Stemmer. Det betyr at noen brukte styrke."
         },
         next: "scene_harbor"
     },
@@ -103,10 +109,10 @@ export const story = [
         image: "tina_apartment.png",
         audio: "rain",
         learning: {
-            question: "Hvordan ser leiligheten ut?",
-            options: ["Ryddig og ren", "Endevendt og rotete", "Tom"],
+            question: "Hva betyr det at leiligheten er 'endevendt'?",
+            options: ["Den er pusset opp", "Noen har rotet voldsomt", "Den er snudd opp ned av vinden"],
             correct: 1,
-            feedback: "Ja, noen har romstert voldsomt her."
+            feedback: "Ja, 'endevendt' betyr her at alt er rotet til."
         },
         choices: [
             { text: "Undersøk soverommet", target: "apt_bedroom" },
@@ -124,6 +130,12 @@ export const story = [
             question: "Hva er koden til safen? (Årstallet moren døde)",
             answer: "2005",
             correctTarget: "apt_safe_open"
+        },
+        learning: {
+            question: "Hvilket ord er preposisjonen i setningen 'Under sengen finner du en liten safe'?",
+            options: ["Under", "Sengen", "Finner"],
+            correct: 0,
+            feedback: "Riktig. 'Under' forteller hvor noe er."
         }
     },
     {
@@ -135,10 +147,10 @@ export const story = [
         clue: { id: "diary", name: "Dagbok", description: "Beskriver trusler fra Lars." },
         note: "Motiv: Lars truet henne. 'Ingen andre skal få deg'.",
         learning: {
-            question: "Hvem er Tina redd for?",
-            options: ["Frank", "Lars", "Olav"],
+            question: "Hva er synonymt med 'livredd'?",
+            options: ["Litt redd", "Veldig redd", "Glad"],
             correct: 1,
-            feedback: "Riktig. Hun skriver om Lars i dagboken."
+            feedback: "Riktig. Livredd betyr ekstremt redd."
         },
         next: "scene_apartment"
     },
@@ -150,6 +162,12 @@ export const story = [
         audio: "rain",
         timelineEvent: { id: "sms_received", time: "20:10", description: "Tina mottar trusselmelding." },
         note: "SMS fra Lars (20:10): 'Jeg vet du kommer med ferga. Jeg venter på kaia.'",
+        learning: {
+            question: "Setningen 'Du tørker vekk' står i presens. Hva er preteritum (fortid)?",
+            options: ["Du tørket vekk", "Du skal tørke vekk", "Du har tørket vekk"],
+            correct: 0,
+            feedback: "Korrekt. 'Tørket' er fortid."
+        },
         next: "scene_phone_read"
     },
     {
@@ -159,10 +177,10 @@ export const story = [
         image: "tina_apartment.png",
         audio: "rain",
         learning: {
-            question: "Hva visste Lars?",
-            options: ["Hvor hun bodde", "Hvilken ferge hun tok", "Hvor hun jobbet"],
+            question: "Hvem refererer 'Vi' til i meldingen 'Vi er ikke ferdige'?",
+            options: ["Tina og moren", "Lars og Tina", "Detektiven og politiet"],
             correct: 1,
-            feedback: "Korrekt. Han visste om 19:45-fergen."
+            feedback: "Riktig. Lars snakker om seg selv og Tina."
         },
         next: "scene_apartment"
     },
@@ -175,6 +193,12 @@ export const story = [
         image: "restaurant_interior.png",
         video: true,
         audio: "cafe",
+        learning: {
+            question: "Hvilket ord beskriver hvordan Olav føler seg?",
+            options: ["Låser", "Opp", "Irritert"],
+            correct: 2,
+            feedback: "Stemmer. Han er irritert."
+        },
         choices: [
             { text: "Avhør Berit (Kollega)", target: "cafe_berit" },
             { text: "Snakk med Olav (Sjefen)", target: "cafe_olav" },
@@ -188,10 +212,10 @@ export const story = [
         image: "restaurant_interior.png",
         audio: "cafe",
         learning: {
-            question: "Hva gjør Berit mens hun snakker?",
-            options: ["Ler", "Gråter", "Skjelver på hendene"],
-            correct: 2,
-            feedback: "Riktig. Hun er nervøs og skjelver."
+            question: "Hvorfor tror du Berit skjelver?",
+            options: ["Hun fryser", "Hun er nervøs eller redd", "Hun er gammel"],
+            correct: 1,
+            feedback: "Riktig tolkning. Hun er sannsynligvis nervøs."
         },
         choices: [
             { text: "Sjekk timelisten på veggen", target: "cafe_log_check" },
@@ -208,6 +232,12 @@ export const story = [
             question: "Stemmer Berits alibi? (Ja/Nei)",
             answer: ["nei", "n"],
             correctTarget: "berit_lie"
+        },
+        learning: {
+            question: "Hva betyr uttrykket 'svart på hvitt'?",
+            options: ["At det er mørkt", "At det er skrevet ned og bevist", "At det er en gammel avis"],
+            correct: 1,
+            feedback: "Korrekt. Det betyr at det er dokumentert."
         }
     },
     {
@@ -218,6 +248,12 @@ export const story = [
         audio: "cafe",
         timelineEvent: { id: "berit_leaves", time: "20:30", description: "Berit drar fra kafeen (Alibi-hull)." },
         note: "Berit: Løy om tiden, men kun for å skjule tyveri.",
+        learning: {
+            question: "Hva er forskjellen på en tyv og en morder?",
+            options: ["En tyv stjeler, en morder dreper", "Det er det samme", "En tyv er verre enn en morder"],
+            correct: 0,
+            feedback: "Riktig."
+        },
         next: "scene_cafe"
     },
     {
@@ -228,10 +264,10 @@ export const story = [
         audio: "cafe",
         note: "Vitne: Mann med militærjakke og messingknapper lette etter Tina.",
         learning: {
-            question: "Hvordan beskriver Olav mannen?",
-            options: ["Velkledd og rolig", "Ustabil med militærjakke", "Liten og redd"],
+            question: "Hva betyr 'ustabil' om en person?",
+            options: ["At han faller lett", "At han er i ubalanse mentalt", "At han er sterk"],
             correct: 1,
-            feedback: "Stemmer. Beskrivelsen passer på Lars."
+            feedback: "Riktig. Det betyr ofte at man er uforutsigbar eller psykisk syk."
         },
         next: "scene_cafe"
     },
@@ -243,6 +279,12 @@ export const story = [
         text: "Bakgatene i Molde er mørke og trange. Her holder byens løse fugler til. Frank, en lokal fikser, står under et takoverbygg og røyker.",
         image: "cover_molde.png",
         audio: "rain",
+        learning: {
+            question: "Hva betyr metaforen 'løse fugler'?",
+            options: ["Fugler som har rømt fra bur", "Folk som lever på kanten av samfunnet", "Hjemløse katter"],
+            correct: 1,
+            feedback: "Stemmer. Det er et uttrykk for folk som sliter eller er kriminelle."
+        },
         choices: [
             { text: "Press Frank for info", target: "alley_frank" },
             { text: "Sjekk skyggene lenger inn", target: "alley_clues" },
@@ -257,6 +299,12 @@ export const story = [
         audio: "rain",
         timelineEvent: { id: "frank_call", time: "20:15", description: "Tina ringer Frank i panikk." },
         note: "Frank: Hørte Tina var redd på kaia kl 20:15.",
+        learning: {
+            question: "Hvilket ord binder setningene sammen (konjunksjon) i 'Jeg sa hun skulle løpe, men så ble linjen brutt'?",
+            options: ["Sa", "Men", "Så"],
+            correct: 1,
+            feedback: "Riktig. 'Men' er en konjunksjon."
+        },
         next: "scene_alley"
     },
     {
@@ -265,6 +313,12 @@ export const story = [
         text: "Du hører tunge pust i mørket. En skikkelse prøver å smyge seg unna. Du trekker våpenet. 'Stå stille!' Det er Lars. Han ser herjet ut. Og han har på seg en gammel militærjakke.",
         image: "cover_molde.png",
         audio: "rain",
+        learning: {
+            question: "Hva betyr verbet 'å smyge'?",
+            options: ["Å bråke mye", "Å bevege seg stille og forsiktig", "Å løpe fort"],
+            correct: 1,
+            feedback: "Korrekt. Å smyge er å bevege seg lydløst."
+        },
         choices: [
             { text: "Sjekk jakken hans", target: "lars_jacket" }
         ]
@@ -277,10 +331,10 @@ export const story = [
         audio: "rain",
         note: "Bevis: Lars mangler en knapp som matcher den på åstedet.",
         learning: {
-            question: "Hva mangler på jakken til Lars?",
-            options: ["En hette", "En glidelås", "En knapp"],
-            correct: 2,
-            feedback: "Riktig! En fellende bevis."
+            question: "Hvilken form av adjektivet 'løs' er brukt i 'Trådene henger løse'?",
+            options: ["Entall", "Flertall", "Bestemt form"],
+            correct: 1,
+            feedback: "Riktig. 'Trådene' er flertall, derfor 'løse'."
         },
         next: "lars_interrogation"
     },
@@ -290,6 +344,12 @@ export const story = [
         text: "'Jeg har ikke gjort noe! Jeg var på kino! Jeg så den nye actionfilmen. Den startet klokken 20:00!' Han svetter, og blikket flakker.",
         image: "cover_molde.png",
         audio: "rain",
+        learning: {
+            question: "Hva betyr det at blikket 'flakker'?",
+            options: ["At han stirrer stivt", "At han ser hit og dit (usikker)", "At han lukker øynene"],
+            correct: 1,
+            feedback: "Stemmer. Flakkende blikk er ofte tegn på løgn eller usikkerhet."
+        },
         choices: [
             { text: "Sjekk kinoprogrammet på mobilen", target: "lars_alibi_check" }
         ]
@@ -304,6 +364,12 @@ export const story = [
             question: "Snakker Lars sant om kinoen? (Ja/Nei)",
             answer: ["nei", "n"],
             correctTarget: "lars_exposed"
+        },
+        learning: {
+            question: "Hva betyr 'avlyst'?",
+            options: ["At den startet tidligere", "At den ikke ble noe av", "At den var utsolgt"],
+            correct: 1,
+            feedback: "Riktig. Arrangementet ble stoppet."
         }
     },
     {
@@ -313,6 +379,12 @@ export const story = [
         image: "cover_molde.png",
         audio: "rain",
         setFlag: "lars_suspect",
+        learning: {
+            question: "Hva betyr uttrykket 'Alt håp forlater øynene hans'?",
+            options: ["At han blir blind", "At han gir opp", "At han begynner å gråte"],
+            correct: 1,
+            feedback: "Riktig. Det er et bilde på at han innser at alt er tapt."
+        },
         next: "scene_choice"
     },
 
@@ -323,7 +395,13 @@ export const story = [
         text: "Brikkene faller på plass. Du har tidslinjen. Du har motivet. Du har beviset. Det er på tide å peke ut svinet som gjorde dette.",
         image: "detective_office.png",
         audio: "office",
-        type: "deduction"
+        type: "deduction",
+        learning: {
+            question: "Hva betyr 'Brikkene faller på plass'?",
+            options: ["At man legger puslespill", "At man forstår sammenhengen", "At man rydder opp"],
+            correct: 1,
+            feedback: "Korrekt. Det betyr at man endelig forstår løsningen."
+        }
     },
     {
         id: "solved",
@@ -331,6 +409,12 @@ export const story = [
         text: "Du setter håndjernene på Lars. Han gjør ikke motstand. 'Jeg elsket henne,' hvisker han. 'Men hun ville dra. Hun skulle møte Frank og betale gjelden for å reise vekk. Jeg kunne ikke la henne dra.'\n\nSaken er løst. Men regnet i Molde stopper aldri.",
         image: "cover_molde.png",
         audio: "rain",
+        learning: {
+            question: "Hva er subjektet i setningen 'Saken er løst'?",
+            options: ["Saken", "Er", "Løst"],
+            correct: 0,
+            feedback: "Riktig. 'Saken' er det setningen handler om."
+        },
         choices: [
             { text: "Start en ny sak (Spill igjen)", target: "cover" }
         ]

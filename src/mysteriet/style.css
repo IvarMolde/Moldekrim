@@ -88,14 +88,17 @@ body {
     height: 90vh;
     background: var(--sidebar-bg);
     color: #fff;
-    border-right: 2px solid #444;
+    border-left: 2px solid #444;
+    /* Changed from border-right */
     padding: 20px;
     overflow-y: auto;
     display: flex;
     flex-direction: column;
-    margin-right: 20px;
+    margin-left: 20px;
+    /* Changed from margin-right */
     border-radius: 5px;
-    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.5);
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+    /* Shadow to left */
     z-index: 100;
 }
 
@@ -481,6 +484,8 @@ button:hover {
         /* Hidden by default */
         transition: transform 0.3s ease-in-out;
         margin-right: 0;
+        margin-left: 0;
+        /* Reset margin for mobile */
         z-index: 2500;
         /* Higher than everything else */
         box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.8);
